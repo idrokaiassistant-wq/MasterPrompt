@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",
+    "start": "npm run start:prod",
     "start:local": "turbo run start",
     "start:prod": "concurrently \"node scripts/monitor.js start\" \"npm run start --workspace=@prompt-master-pro/web\" \"node apps/api-gateway/dist/index.js\" \"node apps/telegram-service/dist/bot.js\"",
     "start:telegram": "node apps/telegram-service/dist/bot.js",
