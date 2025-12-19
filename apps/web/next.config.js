@@ -6,7 +6,8 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
+  // Windows'da standalone build muammolarini oldini olish uchun
+  output: process.platform === 'win32' ? undefined : 'standalone',
   reactStrictMode: true,
   images: {
     domains: [],

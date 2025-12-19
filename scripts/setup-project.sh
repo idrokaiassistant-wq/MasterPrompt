@@ -361,7 +361,7 @@ setup_testing() {
         log "Test skriptlari tekshirilmoqda..."
         
         # Test command ishlatish
-        if pnpm test --passWithNoTests 2>/dev/null; then
+        if pnpm run test -- --passWithNoTests 2>/dev/null; then
             success "Testlar muvaffaqiyatli o'tkazildi"
         else
             warning "Testlar muvaffaqiyatsiz tugadi. Iltimos, testlarni tekshiring."
@@ -378,11 +378,6 @@ verify_build() {
     # Build command tekshirish
     if grep -q "build" package.json; then
         log "Build jarayoni boshlanmoqda..."
-        
-        # Clean build
-        if grep -q "clean" package.json; then
-            pnpm clean || warning "Clean muvaffaqiyatsiz tugadi"
-        fi
         
         # Build
         if pnpm build; then
