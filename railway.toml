@@ -17,7 +17,3 @@ startCommand = "npm start --workspace=@prompt-master-pro/web"
 [services.telegram-service]
 buildCommand = "turbo run build --filter=@prompt-master-pro/telegram-service..."
 startCommand = "node apps/telegram-service/dist/bot.js"
-
-[services.MasterPrompt]
-buildCommand = "turbo run build"
-startCommand = "npm run start:prod"
