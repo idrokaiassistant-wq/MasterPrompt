@@ -1,0 +1,60 @@
+
+--------------------------------------------------
+[2025-12-18T02:32:48.152Z] [INFO] [System]
+Message: Starting comprehensive test suite...
+Details: 
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.155Z] [INFO] [HealthCheck]
+Message: Attempt 1: Checking base URL...
+Details: 
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.243Z] [SUCCESS] [HealthCheck]
+Message: Base URL is accessible
+Details: Status: 200
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.243Z] [INFO] [API:Generate]
+Message: Testing generate endpoint...
+Details: 
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.342Z] [ERROR] [API:Generate]
+Message: Generation failed
+Details: Status: 500, Error: {"error":"Google Gemini API key topilmadi. Iltimos, Settings sahifasida Google Gemini API key kiriting va saqlang.\n\nAPI key olish: https://aistudio.google.com/app/apikey"}
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.343Z] [INFO] [API:ImproveText]
+Message: Testing improve-text endpoint...
+Details: 
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.349Z] [ERROR] [API:ImproveText]
+Message: Improvement failed
+Details: Status: 500, Error: {"error":"API key topilmadi. Iltimos, Settings sahifasida API key kiriting."}
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.350Z] [INFO] [API:TestPrompt]
+Message: Testing test-prompt endpoint...
+Details: 
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.358Z] [ERROR] [API:TestPrompt]
+Message: Test Prompt failed
+Details: Status: 500, Error: {"error":"Google Gemini API key topilmadi. Settings sahifasida key kiriting."}
+--------------------------------------------------
+
+--------------------------------------------------
+[2025-12-18T02:32:48.358Z] [INFO] [System]
+Message: Test suite completed.
+Details: 
+--------------------------------------------------

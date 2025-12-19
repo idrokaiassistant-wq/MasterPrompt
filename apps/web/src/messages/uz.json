@@ -1,0 +1,213 @@
+{
+  "common": {
+    "generate": "Yaratish",
+    "copy": "Nusxalash",
+    "save": "Saqlash",
+    "cancel": "Bekor qilish",
+    "delete": "O'chirish",
+    "edit": "Tahrirlash",
+    "use": "Ishlatish",
+    "settings": "Sozlamalar",
+    "history": "Tarix",
+    "templates": "Shablonlar",
+    "loading": "Yuklanmoqda...",
+    "error": "Xatolik yuz berdi"
+  },
+  "home": {
+    "promptRequired": "Iltimos, prompt kiriting",
+    "generateSuccess": "Prompt muvaffaqiyatli yaratildi!"
+  },
+  "topBar": {
+    "title": "Master Prompt",
+    "themeToggle": "Mavzuni o'zgartirish",
+    "language": "Til"
+  },
+  "promptInput": {
+    "placeholder": "Promptingizni kiriting yoki ovozli kirishdan foydalaning...",
+    "characters": "belgilar",
+    "voiceInput": "Ovozli kirish",
+    "words": "So'zlar",
+    "chars": "Belgilar",
+    "ready": "Yaratishga tayyor",
+    "listeningToast": "Eshitilmoqda... Gapiring",
+    "voiceSuccess": "Ovoz muvaffaqiyatli qabul qilindi!",
+    "voiceError": "Ovozli kirishda xatolik yuz berdi",
+    "voiceNotSupported": "Brauzeringiz ovozli kirishni qo'llab-quvvatlamaydi",
+    "clear": "Tozalash",
+    "improve": "Yaxshilash",
+    "improving": "Yaxshilanmoqda...",
+    "improveSuccess": "Matn muvaffaqiyatli yaxshilandi!",
+    "improveError": "Matnni yaxshilashda xatolik yuz berdi",
+    "improveTooltip": "AI matnni aniqlashtiradi va tartibga soladi"
+  },
+  "voiceInput": {
+    "start": "Tinglashni boshlash",
+    "stop": "Tinglashni to'xtatish",
+    "error": "Ovozni aniqlashda xatolik",
+    "notSupported": "Sizning brauzeringiz ovozni aniqlashni qo'llab-quvvatlamaydi."
+  },
+  "advancedSettings": {
+    "title": "Qo'shimcha sozlamalar",
+    "model": "Model",
+    "language": "Til",
+    "temperature": "Harorat",
+    "maxTokens": "Maksimal tokenlar",
+    "modelPlaceholder": "Modelni tanlang",
+    "freeModels": "🎁 Bepul modellar",
+    "premiumModels": "👑 Premium modellar",
+    "modelDescriptions": {
+      "gemini25Flash": "Eng yaxshi narx/sifat • Tavsiya etiladi",
+      "gemini25FlashLite": "Eng tez va tejamkor",
+      "gemini20Flash": "1M kontekst oynasi",
+      "gemini25Pro": "Kuchli reasoning imkoniyatlari",
+      "gemini3ProPreview": "Multimodal tushunish (preview)",
+      "grokBeta": "X.AI eksperimental modeli",
+      "claude35Sonnet": "Anthropic flagman modeli",
+      "gpt4o": "OpenAI’ning so‘nggi modeli"
+    }
+  },
+  "output": {
+    "title": "Yaratilgan prompt",
+    "test": "Test qilish",
+    "subtitle": "AI yaratgan prompt foydalanishga tayyor",
+    "copy": "Nusxalash",
+    "copied": "Nusxalandi",
+    "copySuccess": "Nusxalandi!",
+    "copyError": "Nusxalashda xatolik",
+    "words": "So‘zlar",
+    "characters": "Belgilar",
+    "tip": "Maslahat: promptni nusxalab, sevimli AI modelingizda ishlating",
+    "testSheetTitle": "Prompt test",
+    "testSheetDescription": "Tanlangan modelda promptni sinab ko‘ring",
+    "testInputLabel": "Test matni",
+    "testInputPlaceholder": "Masalan: Yuqoridagi muammolar ro‘yxatini tahlil qilib, prioritet bo‘yicha yechimlar bering...",
+    "testRun": "Test qilish",
+    "testing": "Test qilinmoqda...",
+    "testResult": "Natija",
+    "testInputRequired": "Test uchun matn kiriting"
+  },
+  "tips": {
+    "title": "Maslahatlar",
+    "tip1": "Aniq va batafsil so'rovlar yaxshi natijalar beradi",
+    "tip2": "Kontekst va misollar qo'shing",
+    "tip3": "Turli modellarni sinab ko'ring"
+  },
+  "historyPage": {
+    "title": "Tarix",
+    "empty": "Tarix bo‘sh",
+    "noResults": "Natija topilmadi",
+    "clearAll": "Barchasini o‘chirish",
+    "use": "Ishlatish",
+    "inputLabel": "Input",
+    "outputLabel": "Output",
+    "modelLabel": "Model",
+    "languageLabel": "Til",
+    "loadMore": "Ko‘proq yuklash",
+    "searchPlaceholder": "Tarix bo‘yicha qidirish...",
+    "filterModel": "Model",
+    "filterLanguage": "Til",
+    "allModels": "Barcha modellar",
+    "allLanguages": "Barcha tillar",
+    "resetFilters": "Filtrlarni tozalash"
+  },
+  "templatesPage": {
+    "title": "Shablonlar",
+    "description": "Tezkor natija olish uchun tayyor shablonlardan foydalaning yoki o'zingizning shablonlaringizni yarating.",
+    "yourTemplates": "Sizning shablonlaringiz",
+    "addTemplate": "Shablon qo'shish",
+    "noUserTemplates": "Sizda hali shablonlar mavjud emas. Yangi shablon qo'shish uchun yuqoridagi tugmani bosing.",
+    "defaultTemplates": "Tavsiya etilgan shablonlar",
+    "use": "Ishlatish",
+    "items": {
+      "code": {
+        "title": "Kod yozish",
+        "description": "Dasturlash kodini yozish uchun prompt",
+        "prompt": "Quyidagi vazifani bajarish uchun kod yozing:"
+      },
+      "story": {
+        "title": "Hikoya yozish",
+        "description": "Qiziqarli hikoya yaratish uchun",
+        "prompt": "Quyidagi mavzuda qiziqarli hikoya yozing:"
+      },
+      "article": {
+        "title": "Maqola yozish",
+        "description": "Professional maqola yaratish",
+        "prompt": "Quyidagi mavzuda professional maqola yozing:"
+      },
+      "email": {
+        "title": "Email yozish",
+        "description": "Professional email yaratish",
+        "prompt": "Quyidagi mavzu uchun professional email yozing:"
+      },
+      "analysis": {
+        "title": "Tahlil qilish",
+        "description": "Ma'lumotlarni tahlil qilish",
+        "prompt": "Quyidagi ma'lumotlarni tahlil qiling va xulosa chiqaring:"
+      },
+      "explain": {
+        "title": "Tushuntirish",
+        "description": "Murakkab mavzuni tushuntirish",
+        "prompt": "Quyidagi mavzuni oddiy va tushunarli qilib tushuntiring:"
+      }
+    }
+  },
+  "settingsPage": {
+    "title": "Sozlamalar",
+    "description": "API kalitlarni sozlang va dastur sozlamalarini boshqaring (kalitlar endi localStorage’da saqlanmaydi)",
+    "securityWarningTitle": "Xavfsizlik ogohlantirishi",
+    "securityWarningDescription": "Brauzer localStorage’ida saqlangan eski API kalitlar topildi. Ularni xavfsiz saqlashga ko‘chirish tavsiya etiladi.",
+    "migrateLegacy": "Eski kalitlarni ko‘chirish va tozalash",
+    "statusLabel": "Holat",
+    "statusSecure": "✅ Saqlangan (xavfsiz)",
+    "statusEnv": "✅ Server env kaliti ishlatilmoqda",
+    "statusMissing": "❌ Kiritilmagan",
+    "openrouterTitle": "OpenRouter API Key",
+    "openrouterDescription": "Barcha modellar uchun (GPT-4o, Claude, Grok va boshqalar)",
+    "openrouterLink": "OpenRouter API key olish",
+    "geminiTitle": "Google Gemini API Key",
+    "geminiDescription": "Faqat Google Gemini modellari uchun. Free tier uchun Gemini 2.5 Flash yoki 2.5 Flash Lite tavsiya etiladi.",
+    "geminiLink": "Google Gemini API key olish",
+    "enterOpenrouter": "❌ Iltimos, OpenRouter API key kiriting",
+    "enterGemini": "❌ Iltimos, Google Gemini API key kiriting",
+    "savedOpenrouter": "✅ OpenRouter API key xavfsiz saqlandi!",
+    "savedGemini": "✅ Google Gemini API key xavfsiz saqlandi!",
+    "clearedOpenrouter": "✅ OpenRouter API key o‘chirildi",
+    "clearedGemini": "✅ Google Gemini API key o‘chirildi",
+    "migrated": "✅ Eski kalitlar xavfsiz saqlandi va localStorage’dan tozalandi!",
+    "clear": "O‘chirish"
+  },
+  "help": {
+    "button": "Yordam",
+    "title": "Yordam",
+    "subtitle": "Tez boshlash va muhim tavsiyalar",
+    "step1Title": "1) API kalitlarni sozlash",
+    "step1Body": "Kalitlar localStorage’da saqlanmaydi — server HttpOnly cookie’da saqlanadi. Sozlash uchun Settings sahifasiga o‘ting.",
+    "step1Bullet1": "Google Gemini modellari: Google Gemini API key.",
+    "step1Bullet2": "GPT / Claude / Grok: OpenRouter API key.",
+    "step2Title": "2) Model va farqlar",
+    "step2Body": "Bepul modellar odatda arzon/tez, premium modellar esa sifat va imkoniyatlari yuqoriroq bo‘ladi.",
+    "step3Title": "3) Harorat va maksimal tokenlar",
+    "step3Bullet1": "Harorat: 0 — aniqroq, 1+ — ijodiyroq.",
+    "step3Bullet2": "Maksimal tokenlar: javob uzunligi (ko‘paygan sari xarajat ham oshadi).",
+    "step4Title": "4) Promptni test qilish",
+    "step4Body": "Natija kartasidagi Test tugmasi promptni tanlangan modelda sinashga yordam beradi."
+  },
+  "summary": {
+    "model": "Model",
+    "temperature": "Harorat",
+    "maxTokens": "Maks. token",
+    "edit": "Tahrirlash",
+    "openAdvanced": "Sozlamalarni ochish"
+  },
+  "onboarding": {
+    "title": "Tez boshlash",
+    "description": "Quyidagi qadamlar Prompt Master Pro’dan tezroq foydalanishga yordam beradi.",
+    "stepCredentials": "API kalitni sozlang",
+    "stepModel": "Modelni tanlang",
+    "stepParams": "Parametrlarni sozlang",
+    "stepGenerate": "Birinchi promptni yarating",
+    "actionSettings": "Settings’ga o‘tish",
+    "actionAdvanced": "Qo‘shimcha sozlamalar",
+    "dismiss": "Yopish"
+  }
+}

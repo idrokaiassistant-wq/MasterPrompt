@@ -1,0 +1,11 @@
+[services.telegram-service]
+buildCommand = "turbo run build --filter=@prompt-master-pro/telegram-service..."
+startCommand = "npm run start:telegram"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[services.api-gateway]
+buildCommand = "turbo run build --filter=@prompt-master-pro/api-gateway..."
+startCommand = "node apps/api-gateway/dist/index.js"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10

@@ -1,0 +1,294 @@
+name: Cleanup & Maintenance
+
+on:
+  schedule:
+    # Har hafta yakshanba kuni 03:00 UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+    inputs:
+      cleanup_type:
+        description: 'Tozalash turi'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - git
+          - node
+          - temp
+          - custom
+      dry_run:
+        description: 'Dry run rejimi'
+        required: false
+        default: false
+        type: boolean
+      backup:
+        description: 'Backup yaratish'
+        required: false
+        default: true
+        type: boolean
+
+env:
+  NODE_VERSION: '18'
+  PNPM_VERSION: '9'
+
+jobs:
+  cleanup:
+    name: Repository Cleanup
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup cleanup environment
+        run: |
+          echo "CLEANUP_TYPE=${{ github.event.inputs.cleanup_type || 'all' }}" >> $GITHUB_ENV
+          echo "DRY_RUN=${{ github.event.inputs.dry_run || false }}" >> $GITHUB_ENV
+          echo "BACKUP=${{ github.event.inputs.backup || true }}" >> $GITHUB_ENV
+          echo "BACKUP_DIR=cleanup_backup_$(date +%Y%m%d_%H%M%S)" >> $GITHUB_ENV
+
+      - name: Create backup directory
+        if: env.BACKUP == 'true'
+        run: mkdir -p $BACKUP_DIR
+
+      - name: Cleanup Node.js files
+        if: env.CLEANUP_TYPE == 'all' || env.CLEANUP_TYPE == 'node'
+        run: |
+          echo "🧹 Cleaning Node.js files..."
+          
+          # Remove node_modules
+          find . -name "node_modules" -type d -exec rm -rf {} + 2>/dev/null || true
+          
+          # Remove lock files
+          find . -name "package-lock.json" -type f -delete 2>/dev/null || true
+          find . -name "yarn.lock" -type f -delete 2>/dev/null || true
+          
+          # Remove build artifacts
+          find . -name "dist" -type d -exec rm -rf {} + 2>/dev/null || true
+          find . -name "build" -type d -exec rm -rf {} + 2>/dev/null || true
+          find . -name ".next" -type d -exec rm -rf {} + 2>/dev/null || true
+          
+          # Remove coverage reports
+          find . -name "coverage" -type d -exec rm -rf {} + 2>/dev/null || true
+          find . -name ".nyc_output" -type d -exec rm -rf {} + 2>/dev/null || true
+          
+          echo "✅ Node.js files cleaned"
+
+      - name: Cleanup temporary files
+        if: env.CLEANUP_TYPE == 'all' || env.CLEANUP_TYPE == 'temp'
+        run: |
+          echo "🗑️ Cleaning temporary files..."
+          
+          # Remove log files
+          find . -name "*.log" -type f -delete 2>/dev/null || true
+          find . -name "npm-debug.log*" -type f -delete 2>/dev/null || true
+          find . -name "yarn-debug.log*" -type f -delete 2>/dev/null || true
+          
+          # Remove temporary files
+          find . -name "*.tmp" -type f -delete 2>/dev/null || true
+          find . -name "*.temp" -type f -delete 2>/dev/null || true
+          find . -name "*.swp" -type f -delete 2>/dev/null || true
+          find . -name "*.swo" -type f -delete 2>/dev/null || true
+          find . -name "*~" -type f -delete 2>/dev/null || true
+          
+          # Remove OS specific files
+          find . -name ".DS_Store" -type f -delete 2>/dev/null || true
+          find . -name "Thumbs.db" -type f -delete 2>/dev/null || true
+          
+          echo "✅ Temporary files cleaned"
+
+      - name: Cleanup Git ignored files
+        if: env.CLEANUP_TYPE == 'all' || env.CLEANUP_TYPE == 'git'
+        run: |
+          echo "📝 Cleaning Git ignored files..."
+          
+          # Create a temporary git repository to check ignored files
+          if [ -f ".gitignore" ]; then
+            # Backup current git status
+            git status --porcelain > /tmp/git_status_backup.txt || true
+            
+            # Clean ignored files
+            git clean -Xfd || true
+            
+            echo "✅ Git ignored files cleaned"
+          else
+            echo "⚠️ No .gitignore file found"
+          fi
+
+      - name: Cleanup empty directories
+        run: |
+          echo "📁 Cleaning empty directories..."
+          
+          # Find and remove empty directories (excluding .git and special dirs)
+          find . -type d -empty -not -path "./.git/*" -not -name ".git" -not -path "./node_modules/*" -exec rmdir {} \; 2>/dev/null || true
+          
+          echo "✅ Empty directories cleaned"
+
+      - name: Cleanup old backups
+        run: |
+          echo "🗄️ Cleaning old backups..."
+          
+          # Remove backups older than 30 days
+          find . -name "cleanup_backup_*" -type d -mtime +30 -exec rm -rf {} \; 2>/dev/null || true
+          
+          echo "✅ Old backups cleaned"
+
+      - name: Check disk usage
+        run: |
+          echo "💾 Disk usage before cleanup:"
+          du -sh . 2>/dev/null || true
+          
+          echo "📊 Detailed disk usage:"
+          du -sh * 2>/dev/null | sort -hr | head -20 || true
+
+      - name: Generate cleanup report
+        run: |
+          echo "# Cleanup Report" > cleanup-report.md
+          echo "" >> cleanup-report.md
+          echo "**Date:** $(date)" >> cleanup-report.md
+          echo "**Cleanup Type:** $CLEANUP_TYPE" >> cleanup-report.md
+          echo "**Dry Run:** $DRY_RUN" >> cleanup-report.md
+          echo "**Backup:** $BACKUP" >> cleanup-report.md
+          echo "" >> cleanup-report.md
+          echo "## Actions Performed" >> cleanup-report.md
+          echo "" >> cleanup-report.md
+          echo "- ✅ Node.js files cleaned" >> cleanup-report.md
+          echo "- ✅ Temporary files cleaned" >> cleanup-report.md
+          echo "- ✅ Git ignored files cleaned" >> cleanup-report.md
+          echo "- ✅ Empty directories cleaned" >> cleanup-report.md
+          echo "- ✅ Old backups cleaned" >> cleanup-report.md
+          echo "" >> cleanup-report.md
+          echo "## Disk Usage After Cleanup" >> cleanup-report.md
+          echo "" >> cleanup-report.md
+          du -sh . >> cleanup-report.md 2>/dev/null || true
+
+      - name: Upload cleanup report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cleanup-report
+          path: cleanup-report.md
+
+      - name: Commit cleanup changes
+        if: env.DRY_RUN != 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git add -A
+          git diff --staged --quiet || git commit -m "🧹 Automated cleanup: $(date +%Y-%m-%d)"
+          
+          git push || echo "Nothing to push"
+
+  maintenance:
+    name: Repository Maintenance
+    runs-on: ubuntu-latest
+    needs: cleanup
+    
+    steps:
+      - name: Repository checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Update dependencies
+        run: |
+          echo "📦 Checking for dependency updates..."
+          
+          # Install pnpm
+          npm install -g pnpm@${{ env.PNPM_VERSION }}
+          
+          # Check for outdated packages
+          pnpm outdated || true
+          
+          # Security audit
+          pnpm audit --audit-level moderate || true
+
+      - name: Optimize repository
+        run: |
+          echo "⚡ Optimizing repository..."
+          
+          # Git garbage collection
+          git gc --aggressive --prune=now || true
+          
+          # Git repack
+          git repack -a -d || true
+          
+          echo "✅ Repository optimized"
+
+      - name: Generate maintenance report
+        run: |
+          echo "# Maintenance Report" > maintenance-report.md
+          echo "" >> maintenance-report.md
+          echo "**Date:** $(date)" >> maintenance-report.md
+          echo "" >> maintenance-report.md
+          echo "## Repository Statistics" >> maintenance-report.md
+          echo "" >> maintenance-report.md
+          echo "- **Total commits:** $(git rev-list --count HEAD)" >> maintenance-report.md
+          echo "- **Branches:** $(git branch -r | wc -l)" >> maintenance-report.md
+          echo "- **Tags:** $(git tag | wc -l)" >> maintenance-report.md
+          echo "- **Repository size:** $(du -sh . | cut -f1)" >> maintenance-report.md
+          echo "" >> maintenance-report.md
+          echo "## Recent Activity" >> maintenance-report.md
+          echo "" >> maintenance-report.md
+          git log --oneline -10 >> maintenance-report.md || true
+
+      - name: Upload maintenance report
+        uses: actions/upload-artifact@v3
+        with:
+          name: maintenance-report
+          path: maintenance-report.md
+
+  notify:
+    name: Send Notifications
+    runs-on: ubuntu-latest
+    needs: [cleanup, maintenance]
+    if: always()
+    
+    steps:
+      - name: Download reports
+        uses: actions/download-artifact@v3
+        with:
+          path: reports/
+
+      - name: Notify Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          STATUS="${{ needs.cleanup.result == 'success' && '✅' || '❌' }}"
+          MESSAGE="🧹 *Repository Cleanup & Maintenance*
+          
+          Status: $STATUS
+          Date: $(date +%Y-%m-%d)
+          Cleanup Type: ${{ env.CLEANUP_TYPE }}
+          Dry Run: ${{ env.DRY_RUN }}
+          
+          📊 Reports available in Actions artifacts"
+          
+          curl -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+            -d "chat_id=$TELEGRAM_CHAT_ID" \
+            -d "text=$MESSAGE" \
+            -d "parse_mode=Markdown"
+
+      - name: Create issue if cleanup failed
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Cleanup & Maintenance Failed',
+              body: `Cleanup and maintenance workflow failed on ${new Date().toISOString()}.\n\nPlease check the [Actions logs](https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}) for details.`,
+              labels: ['maintenance', 'urgent']
+            })

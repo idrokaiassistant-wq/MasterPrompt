@@ -1,0 +1,213 @@
+{
+  "common": {
+    "generate": "Oluştur",
+    "copy": "Kopyala",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "use": "Kullan",
+    "settings": "Ayarlar",
+    "history": "Geçmiş",
+    "templates": "Şablonlar",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu"
+  },
+  "home": {
+    "promptRequired": "Lütfen bir prompt girin",
+    "generateSuccess": "Prompt başarıyla oluşturuldu!"
+  },
+  "topBar": {
+    "title": "Master Prompt",
+    "themeToggle": "Temayı değiştir",
+    "language": "Dil"
+  },
+  "promptInput": {
+    "placeholder": "Prompt'unuzu girin veya sesli giriş kullanın...",
+    "characters": "karakter",
+    "voiceInput": "Sesli giriş",
+    "words": "Kelimeler",
+    "chars": "Karakterler",
+    "ready": "Oluşturmaya hazır",
+    "listeningToast": "Dinleniyor... Konuşun",
+    "voiceSuccess": "Sesli giriş alındı!",
+    "voiceError": "Sesli giriş hatası",
+    "voiceNotSupported": "Tarayıcınız sesli girişi desteklemiyor",
+    "clear": "Temizle",
+    "improve": "İyileştir",
+    "improving": "İyileştiriliyor...",
+    "improveSuccess": "Metin başarıyla iyileştirildi!",
+    "improveError": "Metin iyileştirilirken hata oluştu",
+    "improveTooltip": "AI metni netleştirecek ve düzenleyecek"
+  },
+  "voiceInput": {
+    "start": "Dinlemeye başla",
+    "stop": "Dinlemeyi durdur",
+    "error": "Ses tanıma hatası",
+    "notSupported": "Tarayıcınız ses tanımayı desteklemiyor."
+  },
+  "advancedSettings": {
+    "title": "Gelişmiş Ayarlar",
+    "model": "Model",
+    "language": "Dil",
+    "temperature": "Sıcaklık",
+    "maxTokens": "Maks. Token",
+    "modelPlaceholder": "Model seçin",
+    "freeModels": "🎁 Ücretsiz modeller",
+    "premiumModels": "👑 Premium modeller",
+    "modelDescriptions": {
+      "gemini25Flash": "En iyi fiyat/performans • Önerilen",
+      "gemini25FlashLite": "En hızlı ve verimli",
+      "gemini20Flash": "1M bağlam penceresi",
+      "gemini25Pro": "Gelişmiş akıl yürütme",
+      "gemini3ProPreview": "En iyi çok modlu anlama (preview)",
+      "grokBeta": "X.AI deneysel modeli",
+      "claude35Sonnet": "Anthropic amiral gemisi",
+      "gpt4o": "OpenAI’nin en yeni modeli"
+    }
+  },
+  "output": {
+    "title": "Oluşturulan Prompt",
+    "test": "Test",
+    "subtitle": "Yapay zekâ tarafından oluşturulan prompt kullanıma hazır",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "copySuccess": "Kopyalandı!",
+    "copyError": "Kopyalama hatası",
+    "words": "Kelimeler",
+    "characters": "Karakterler",
+    "tip": "İpucu: promptu kopyalayıp favori AI modelinizde kullanın",
+    "testSheetTitle": "Prompt testi",
+    "testSheetDescription": "Seçili model ile bu promptu test edin",
+    "testInputLabel": "Test girdisi",
+    "testInputPlaceholder": "Örn: Yukarıdaki sorunları analiz et ve önceliğe göre çözümler öner...",
+    "testRun": "Test et",
+    "testing": "Test ediliyor...",
+    "testResult": "Sonuç",
+    "testInputRequired": "Lütfen test girdisi girin"
+  },
+  "tips": {
+    "title": "İpuçları",
+    "tip1": "Net ve detaylı istekler daha iyi sonuçlar verir",
+    "tip2": "Bağlam ve örnekler ekleyin",
+    "tip3": "Farklı modelleri deneyin"
+  },
+  "historyPage": {
+    "title": "Geçmiş",
+    "empty": "Geçmiş boş",
+    "noResults": "Sonuç bulunamadı",
+    "clearAll": "Tümünü temizle",
+    "use": "Kullan",
+    "inputLabel": "Input",
+    "outputLabel": "Output",
+    "modelLabel": "Model",
+    "languageLabel": "Dil",
+    "loadMore": "Daha fazla yükle",
+    "searchPlaceholder": "Geçmişte ara...",
+    "filterModel": "Model",
+    "filterLanguage": "Dil",
+    "allModels": "Tüm modeller",
+    "allLanguages": "Tüm diller",
+    "resetFilters": "Filtreleri sıfırla"
+  },
+  "templatesPage": {
+    "title": "Şablonlar",
+    "description": "Hızlı sonuçlar için hazır şablonları kullanın veya kendi şablonlarınızı oluşturun.",
+    "yourTemplates": "Şablonlarınız",
+    "addTemplate": "Şablon Ekle",
+    "noUserTemplates": "Henüz şablonunuz yok. Yeni bir şablon eklemek için yukarıdaki düğmeye tıklayın.",
+    "defaultTemplates": "Önerilen Şablonlar",
+    "use": "Kullan",
+    "items": {
+      "code": {
+        "title": "Kod yaz",
+        "description": "Programlama kodu yazmak için prompt",
+        "prompt": "Aşağıdaki görevi tamamlamak için kod yaz:"
+      },
+      "story": {
+        "title": "Hikâye yaz",
+        "description": "Etkileyici bir hikâye oluştur",
+        "prompt": "Aşağıdaki konuda ilginç bir hikâye yaz:"
+      },
+      "article": {
+        "title": "Makale yaz",
+        "description": "Profesyonel bir makale oluştur",
+        "prompt": "Aşağıdaki konuda profesyonel bir makale yaz:"
+      },
+      "email": {
+        "title": "E-posta yaz",
+        "description": "Profesyonel e-posta oluştur",
+        "prompt": "Aşağıdaki konu için profesyonel bir e-posta yaz:"
+      },
+      "analysis": {
+        "title": "Analiz et",
+        "description": "Verileri analiz et ve sonuç çıkar",
+        "prompt": "Aşağıdaki bilgileri analiz et ve sonuç çıkar:"
+      },
+      "explain": {
+        "title": "Açıkla",
+        "description": "Karmaşık bir konuyu açıkla",
+        "prompt": "Aşağıdaki konuyu basit ve anlaşılır şekilde açıkla:"
+      }
+    }
+  },
+  "settingsPage": {
+    "title": "Ayarlar",
+    "description": "API anahtarlarını ve uygulama ayarlarını yönetin (anahtarlar artık localStorage’da saklanmaz)",
+    "securityWarningTitle": "Güvenlik uyarısı",
+    "securityWarningDescription": "localStorage’da eski API anahtarları bulundu. Güvenli depolamaya taşımanız önerilir.",
+    "migrateLegacy": "Eski anahtarları taşı ve temizle",
+    "statusLabel": "Durum",
+    "statusSecure": "✅ Kaydedildi (güvenli)",
+    "statusEnv": "✅ Sunucu env anahtarı kullanılıyor",
+    "statusMissing": "❌ Ayarlanmadı",
+    "openrouterTitle": "OpenRouter API Key",
+    "openrouterDescription": "Tüm modeller için (GPT-4o, Claude, Grok, vb.)",
+    "openrouterLink": "OpenRouter API key al",
+    "geminiTitle": "Google Gemini API Key",
+    "geminiDescription": "Yalnızca Google Gemini modelleri için. Ücretsiz kullanım için Gemini 2.5 Flash / Flash Lite önerilir.",
+    "geminiLink": "Google Gemini API key al",
+    "enterOpenrouter": "❌ Lütfen OpenRouter API key girin",
+    "enterGemini": "❌ Lütfen Google Gemini API key girin",
+    "savedOpenrouter": "✅ OpenRouter API key güvenle kaydedildi!",
+    "savedGemini": "✅ Google Gemini API key güvenle kaydedildi!",
+    "clearedOpenrouter": "✅ OpenRouter API key silindi",
+    "clearedGemini": "✅ Google Gemini API key silindi",
+    "migrated": "✅ Eski anahtarlar taşındı ve localStorage temizlendi!",
+    "clear": "Sil"
+  },
+  "help": {
+    "button": "Yardım",
+    "title": "Yardım",
+    "subtitle": "Hızlı başlangıç ve ipuçları",
+    "step1Title": "1) API anahtarlarını ayarla",
+    "step1Body": "Anahtarlar localStorage’da saklanmaz — HttpOnly cookie’de saklanır. Ayarlamak için Settings’e gidin.",
+    "step1Bullet1": "Google Gemini modelleri: Google Gemini API key.",
+    "step1Bullet2": "GPT / Claude / Grok: OpenRouter API key.",
+    "step2Title": "2) Modeller ve farklar",
+    "step2Body": "Ücretsiz modeller genelde daha ucuz/hızlıdır; premium modeller daha yüksek kalite sunabilir.",
+    "step3Title": "3) Sıcaklık ve max token",
+    "step3Bullet1": "Sıcaklık: 0 = daha kesin, 1+ = daha yaratıcı.",
+    "step3Bullet2": "Max token: çıktı uzunluğu (arttıkça maliyet yükselir).",
+    "step4Title": "4) Promptu test et",
+    "step4Body": "Çıktı kartındaki Test düğmesiyle promptu seçili modelde deneyin."
+  },
+  "summary": {
+    "model": "Model",
+    "temperature": "Sıcaklık",
+    "maxTokens": "Maks. token",
+    "edit": "Düzenle",
+    "openAdvanced": "Ayarları aç"
+  },
+  "onboarding": {
+    "title": "Hızlı başlangıç",
+    "description": "Master Prompt’tan en iyi şekilde yararlanmak için adımları takip edin.",
+    "stepCredentials": "API anahtarını ayarla",
+    "stepModel": "Model seç",
+    "stepParams": "Parametreleri ayarla",
+    "stepGenerate": "İlk promptu oluştur",
+    "actionSettings": "Settings’e git",
+    "actionAdvanced": "Gelişmiş ayarlar",
+    "dismiss": "Kapat"
+  }
+}

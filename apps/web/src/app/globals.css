@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern Indigo/Violet Palette - Light Mode */
+    --background: 210 40% 98%; /* Soft cool gray/white */
+    --foreground: 222 47% 11%; /* Deep navy text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 262 83% 58%; /* Vibrant Indigo/Violet */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%; /* Very light cool gray */
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 262 83% 96%; /* Very light violet tint for hover states */
+    --accent-foreground: 262 83% 58%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.75rem; /* More rounded corners for modern look */
+  }
+
+  .dark {
+    /* Modern Indigo/Violet Palette - Dark Mode */
+    --background: 222 47% 11%; /* Deep Navy */
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 17%; /* Dark Slate */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 70% 65%; /* Lighter Indigo for dark mode contrast */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 262 83% 20%; /* Darker violet for hover states */
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 263 70% 65%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Hide Next.js dev tools portal */
+nextjs-portal {
+  display: none !important;
+}
+
+[data-nextjs-portal] {
+  display: none !important;
+}

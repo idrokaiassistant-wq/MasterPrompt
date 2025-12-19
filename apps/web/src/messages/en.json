@@ -1,0 +1,213 @@
+{
+  "common": {
+    "generate": "Generate",
+    "copy": "Copy",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "use": "Use",
+    "settings": "Settings",
+    "history": "History",
+    "templates": "Templates",
+    "loading": "Loading...",
+    "error": "An error occurred"
+  },
+  "home": {
+    "promptRequired": "Please enter a prompt",
+    "generateSuccess": "Prompt generated successfully!"
+  },
+  "topBar": {
+    "title": "Master Prompt",
+    "themeToggle": "Toggle theme",
+    "language": "Language"
+  },
+  "promptInput": {
+    "placeholder": "Enter your prompt or use voice input...",
+    "characters": "characters",
+    "voiceInput": "Voice input",
+    "words": "Words",
+    "chars": "Chars",
+    "ready": "Ready to generate",
+    "listeningToast": "Listening... Speak now",
+    "voiceSuccess": "Voice input captured!",
+    "voiceError": "Voice input error",
+    "voiceNotSupported": "Your browser does not support voice input",
+    "clear": "Clear",
+    "improve": "Improve",
+    "improving": "Improving...",
+    "improveSuccess": "Text improved successfully!",
+    "improveError": "Failed to improve text",
+    "improveTooltip": "AI will clarify and organize the text"
+  },
+  "voiceInput": {
+    "start": "Start listening",
+    "stop": "Stop listening",
+    "error": "Voice recognition error",
+    "notSupported": "Your browser does not support voice recognition."
+  },
+  "advancedSettings": {
+    "title": "Advanced Settings",
+    "model": "Model",
+    "language": "Language",
+    "temperature": "Temperature",
+    "maxTokens": "Max Tokens",
+    "modelPlaceholder": "Select a model",
+    "freeModels": "🎁 Free models",
+    "premiumModels": "👑 Premium models",
+    "modelDescriptions": {
+      "gemini25Flash": "Best price-performance • Recommended",
+      "gemini25FlashLite": "Fastest & most efficient",
+      "gemini20Flash": "1M context window",
+      "gemini25Pro": "Advanced reasoning capabilities",
+      "gemini3ProPreview": "Best multimodal understanding (preview)",
+      "grokBeta": "X.AI experimental model",
+      "claude35Sonnet": "Anthropic flagship model",
+      "gpt4o": "OpenAI latest model"
+    }
+  },
+  "output": {
+    "title": "Generated Prompt",
+    "test": "Test",
+    "subtitle": "AI-generated prompt ready to use",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copySuccess": "Copied!",
+    "copyError": "Failed to copy",
+    "words": "Words",
+    "characters": "Characters",
+    "tip": "Tip: Copy this prompt and use it with your favorite AI model for best results",
+    "testSheetTitle": "Prompt test",
+    "testSheetDescription": "Test this prompt with the selected model",
+    "testInputLabel": "Test input",
+    "testInputPlaceholder": "Example: Analyze the issues above and provide prioritized solutions...",
+    "testRun": "Run test",
+    "testing": "Testing...",
+    "testResult": "Result",
+    "testInputRequired": "Please enter test input"
+  },
+  "tips": {
+    "title": "Tips",
+    "tip1": "Clear and detailed requests give better results",
+    "tip2": "Add context and examples",
+    "tip3": "Try different models"
+  },
+  "historyPage": {
+    "title": "History",
+    "empty": "History is empty",
+    "noResults": "No results found",
+    "clearAll": "Clear all",
+    "use": "Use",
+    "inputLabel": "Input",
+    "outputLabel": "Output",
+    "modelLabel": "Model",
+    "languageLabel": "Language",
+    "loadMore": "Load more",
+    "searchPlaceholder": "Search history...",
+    "filterModel": "Model",
+    "filterLanguage": "Language",
+    "allModels": "All models",
+    "allLanguages": "All languages",
+    "resetFilters": "Reset filters"
+  },
+  "templatesPage": {
+    "title": "Templates",
+    "description": "Use ready-made templates for quick results or create your own.",
+    "yourTemplates": "Your Templates",
+    "addTemplate": "Add Template",
+    "noUserTemplates": "You don't have any templates yet. Click the button above to add a new template.",
+    "defaultTemplates": "Recommended Templates",
+    "use": "Use",
+    "items": {
+      "code": {
+        "title": "Write code",
+        "description": "Prompt for writing programming code",
+        "prompt": "Write code to complete the following task:"
+      },
+      "story": {
+        "title": "Write a story",
+        "description": "Create an engaging story",
+        "prompt": "Write an interesting story about the following topic:"
+      },
+      "article": {
+        "title": "Write an article",
+        "description": "Create a professional article",
+        "prompt": "Write a professional article about the following topic:"
+      },
+      "email": {
+        "title": "Write an email",
+        "description": "Create a professional email",
+        "prompt": "Write a professional email for the following topic:"
+      },
+      "analysis": {
+        "title": "Analyze",
+        "description": "Analyze data and provide insights",
+        "prompt": "Analyze the following information and provide conclusions:"
+      },
+      "explain": {
+        "title": "Explain",
+        "description": "Explain a complex topic",
+        "prompt": "Explain the following topic in a simple and clear way:"
+      }
+    }
+  },
+  "settingsPage": {
+    "title": "Settings",
+    "description": "Manage API keys and app preferences (keys are no longer stored in localStorage)",
+    "securityWarningTitle": "Security warning",
+    "securityWarningDescription": "Legacy API keys were found in localStorage. We recommend migrating them to secure storage.",
+    "migrateLegacy": "Migrate & clear legacy keys",
+    "statusLabel": "Status",
+    "statusSecure": "✅ Saved (secure)",
+    "statusEnv": "✅ Using server env key",
+    "statusMissing": "❌ Not set",
+    "openrouterTitle": "OpenRouter API Key",
+    "openrouterDescription": "For all models (GPT-4o, Claude, Grok, etc.)",
+    "openrouterLink": "Get an OpenRouter API key",
+    "geminiTitle": "Google Gemini API Key",
+    "geminiDescription": "Only for Google Gemini models. For free tier, Gemini 2.5 Flash / Flash Lite is recommended.",
+    "geminiLink": "Get a Google Gemini API key",
+    "enterOpenrouter": "❌ Please enter an OpenRouter API key",
+    "enterGemini": "❌ Please enter a Google Gemini API key",
+    "savedOpenrouter": "✅ OpenRouter API key saved securely!",
+    "savedGemini": "✅ Google Gemini API key saved securely!",
+    "clearedOpenrouter": "✅ OpenRouter API key cleared",
+    "clearedGemini": "✅ Google Gemini API key cleared",
+    "migrated": "✅ Legacy keys migrated and localStorage cleared!",
+    "clear": "Clear"
+  },
+  "help": {
+    "button": "Help",
+    "title": "Help",
+    "subtitle": "Quick start and key tips",
+    "step1Title": "1) Set up API keys",
+    "step1Body": "Keys are not stored in localStorage — they are stored in an HttpOnly cookie. Go to Settings to configure.",
+    "step1Bullet1": "Google Gemini models: Google Gemini API key.",
+    "step1Bullet2": "GPT / Claude / Grok: OpenRouter API key.",
+    "step2Title": "2) Models and differences",
+    "step2Body": "Free models are usually cheaper/faster; premium models tend to be higher quality and more capable.",
+    "step3Title": "3) Temperature and max tokens",
+    "step3Bullet1": "Temperature: 0 = more precise, 1+ = more creative.",
+    "step3Bullet2": "Max tokens: output length (higher usually costs more).",
+    "step4Title": "4) Test your prompt",
+    "step4Body": "Use the Test button on the output card to try the prompt with the selected model."
+  },
+  "summary": {
+    "model": "Model",
+    "temperature": "Temperature",
+    "maxTokens": "Max tokens",
+    "edit": "Edit",
+    "openAdvanced": "Open settings"
+  },
+  "onboarding": {
+    "title": "Quick start",
+    "description": "Follow these steps to get the most out of Master Prompt.",
+    "stepCredentials": "Set up an API key",
+    "stepModel": "Choose a model",
+    "stepParams": "Adjust parameters",
+    "stepGenerate": "Generate your first prompt",
+    "actionSettings": "Go to Settings",
+    "actionAdvanced": "Advanced settings",
+    "dismiss": "Dismiss"
+  }
+}

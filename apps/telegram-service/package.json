@@ -1,0 +1,28 @@
+{
+  "name": "@prompt-master-pro/telegram-service",
+  "version": "2.0.0",
+  "private": true,
+  "main": "dist/bot.js",
+  "scripts": {
+    "dev": "tsx watch src/bot.ts",
+    "build": "tsup src/bot.ts",
+    "start": "node dist/bot.js",
+    "start:telegram": "node dist/bot.js",
+    "lint": "eslint src/**/*.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prompt-master-pro/utils": "workspace:*",
+    "dotenv": "^17.2.3",
+    "ioredis": "^5.3.2",
+    "telegraf": "^4.15.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/express": "^4.17.21",
+    "tsup": "^8.0.0",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.0"
+  }
+}

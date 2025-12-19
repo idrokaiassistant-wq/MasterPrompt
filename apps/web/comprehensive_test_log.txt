@@ -1,0 +1,11 @@
+
+Test Run Timestamp: 2025-12-18
+
+--- Typecheck Results ---
+> tsc --noEmit
+
+src/__tests__/components/Button.test.tsx:1:32 - error TS2307: Cannot find module '@testing-library/react' or its corresponding type declarations.
+src/__tests__/components/Button.test.tsx:4:1 - error TS2582: Cannot find name 'describe'. Do you need to install type definitions for a test runner?
+... (and 30+ more errors related to missing test types)
+
+Note: The typecheck failed because test files are included in compilation but test dependencies (@types/jest, @testing-library/react) appear to be missing or not configured in tsconfig.
