@@ -3,10 +3,6 @@
   "version": "2.0.0",
   "private": true,
   "description": "Professional prompt engineering platform with Telegram integration - Railway Pro Optimized",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build",

@@ -1,11 +1,23 @@
-[services.telegram-service]
-buildCommand = "turbo run build --filter=@prompt-master-pro/telegram-service..."
-startCommand = "npm run start:telegram"
+[build]
+builder = "NIXPACKS"
+buildCommand = "turbo run build"
+
+[deploy]
 restartPolicyType = "ON_FAILURE"
 restartPolicyMaxRetries = 10
 
 [services.api-gateway]
 buildCommand = "turbo run build --filter=@prompt-master-pro/api-gateway..."
 startCommand = "node apps/api-gateway/dist/index.js"
-restartPolicyType = "ON_FAILURE"
-restartPolicyMaxRetries = 10
+
+[services.web]
+buildCommand = "turbo run build --filter=@prompt-master-pro/web..."
+startCommand = "npm start --workspace=@prompt-master-pro/web"
+
+[services.telegram-service]
+buildCommand = "turbo run build --filter=@prompt-master-pro/telegram-service..."
+startCommand = "node apps/telegram-service/dist/bot.js"
+
+[services.MasterPrompt]
+buildCommand = "turbo run build"
+startCommand = "npm run start:prod"
