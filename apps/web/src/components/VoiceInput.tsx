@@ -7,16 +7,22 @@ import { Button } from '@/components/ui/button';
 import { Mic } from 'lucide-react';
 import { toast } from 'sonner';
 
-export function VoiceInput({ onListeningChange }: { onListeningChange?: (isListening: boolean) => void }) {
+export function VoiceInput({
+  onListeningChange,
+  onInput
+}: {
+  onListeningChange?: (isListening: boolean) => void;
+  onInput?: (text: string) => void;
+}) {
   const t = useTranslations('voiceInput');
-  const { setInput, language } = usePromptStore();
+  const { setInput: setStoreInput, language } = usePromptStore();
   const [isListening, setIsListening] = useState(false);
   const [isSupported, setIsSupported] = useState(false);
   const recognitionRef = useRef<any>(null);
 
   useEffect(() => {
-    const SpeechRecognition = 
-      (window as any).SpeechRecognition || 
+    const SpeechRecognition =
+      (window as any).SpeechRecognition ||
       (window as any).webkitSpeechRecognition;
     if (SpeechRecognition) {
       setIsSupported(true);
@@ -40,7 +46,12 @@ export function VoiceInput({ onListeningChange }: { onListeningChange?: (isListe
         for (let i = event.resultIndex; i < event.results.length; ++i) {
           finalTranscript += event.results[i][0].transcript;
         }
-        setInput(finalTranscript);
+
+        if (onInput) {
+          onInput(finalTranscript);
+        } else {
+          setStoreInput(finalTranscript);
+        }
       };
 
       recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
@@ -70,7 +81,7 @@ export function VoiceInput({ onListeningChange }: { onListeningChange?: (isListe
       recognitionRef.current.start();
     }
   };
-  
+
   if (!isSupported) {
     return null;
   }

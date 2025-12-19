@@ -21,9 +21,11 @@ type Message = {
 
 export default function TeacherPage() {
   const t = useTranslations('teacherPage');
+  const tCommon = useTranslations('common');
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isVoiceListening, setIsVoiceListening] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -115,8 +117,8 @@ export default function TeacherPage() {
 
                       <div
                         className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-sm ${msg.role === 'user'
-                            ? 'bg-primary text-primary-foreground rounded-tr-sm'
-                            : 'bg-muted/50 dark:bg-muted/30 border border-border rounded-tl-sm'
+                          ? 'bg-primary text-primary-foreground rounded-tr-sm'
+                          : 'bg-muted/50 dark:bg-muted/30 border border-border rounded-tl-sm'
                           }`}
                       >
                         <div className="prose dark:prose-invert prose-sm max-w-none break-words">

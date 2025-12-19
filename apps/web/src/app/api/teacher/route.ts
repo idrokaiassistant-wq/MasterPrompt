@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { readCredentials } from '@/lib/credentials';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
+import { sendToAutomation } from '@/lib/n8n';
 
 export const runtime = 'nodejs';
 
