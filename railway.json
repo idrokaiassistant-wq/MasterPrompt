@@ -20,6 +20,10 @@
     "telegram-service": {
       "buildCommand": "turbo run build --filter=@prompt-master-pro/telegram-service...",
       "startCommand": "node apps/telegram-service/dist/bot.js"
+    },
+    "automation": {
+      "root": "apps/automation",
+      "dockerfilePath": "Dockerfile"
     }
   }
 }

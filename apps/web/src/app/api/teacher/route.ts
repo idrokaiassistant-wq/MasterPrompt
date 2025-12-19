@@ -134,6 +134,15 @@ export async function POST(request: NextRequest) {
     }
 
     const output = await callGoogleGemini(googleApiKey, messages);
+
+    // Trigger automation in background (non-blocking)
+    sendToAutomation('teacher_interaction', {
+      user_ip: ip,
+      message_count: messages.length,
+      last_user_message: messages[messages.length - 1].content,
+      ai_response: output
+    }).catch(err => console.error('Automation trigger failed:', err));
+
     return NextResponse.json({ output });
 
   } catch (error: any) {

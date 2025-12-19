@@ -14,8 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Master Prompt',
-  description: 'Professional prompt engineering platform',
+  title: 'Prompt Academy AI v1.0',
+  description: 'Prompt muhandisligi va sun\'iy intellekt bilan muloqot qilish san\'atini o\'rgatuvchi professional platforma',
+  authors: [{ name: "Nurmurodov Damirjon Salohiddin o'g'li" }],
   manifest: '/manifest.json',
 };
 
