@@ -2,6 +2,15 @@
 
 Professional prompt injenering vositasi - Next.js, TypeScript va AI modellar bilan qurilgan.
 
+## 📚 Hujjatlar
+
+Loyiha bo'yicha batafsil qo'llanmalar `docs/` papkasida joylashgan:
+
+- **🚀 Boshlash**: [Automation Guide](docs/guides/AUTOMATION_GUIDE.md)
+- **🚄 Railway**: [Railway Setup](docs/railway/RAILWAY_SETUP_GUIDE.md), [Monitoring](docs/railway/RAILWAY_MONITORING_GUIDE.md)
+- **🤖 Telegram Bot**: [Bot Setup](docs/telegram/TELEGRAM_BOT_SETUP.md), [Chat ID Setup](docs/telegram/TELEGRAM_CHAT_ID_SETUP.md)
+- **🔒 Xavfsizlik**: [Security Policy](docs/security/SECURITY.md)
+
 ## Xususiyatlar
 
 - 🤖 Ko'p AI model qo'llab-quvvatlash (OpenRouter, Google Gemini)
