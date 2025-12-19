@@ -1,0 +1,25 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "turbo run build"
+  },
+  "deploy": {
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  },
+  "services": {
+    "api-gateway": {
+      "buildCommand": "turbo run build --filter=@prompt-master-pro/api-gateway...",
+      "startCommand": "node apps/api-gateway/dist/index.js"
+    },
+    "web": {
+      "buildCommand": "turbo run build --filter=@prompt-master-pro/web...",
+      "startCommand": "npm start --workspace=@prompt-master-pro/web"
+    },
+    "telegram-service": {
+      "buildCommand": "turbo run build --filter=@prompt-master-pro/telegram-service...",
+      "startCommand": "node apps/telegram-service/dist/bot.js"
+    }
+  }
+}
