@@ -10,6 +10,7 @@
     "settings": "Sozlamalar",
     "history": "Tarix",
     "templates": "Shablonlar",
+    "teacher": "O'qituvchi",
     "loading": "Yuklanmoqda...",
     "error": "Xatolik yuz berdi"
   },
@@ -148,8 +149,20 @@
         "title": "Tushuntirish",
         "description": "Murakkab mavzuni tushuntirish",
         "prompt": "Quyidagi mavzuni oddiy va tushunarli qilib tushuntiring:"
+      },
+      "idea_eval": {
+        "title": "G'oyani Baholash",
+        "description": "Startap g'oyasini 10 ballik tizimda baholash",
+        "prompt": "Dastur g'oyasini 10 ballik tizimda baholash va tahlil qilish uchun quyidagi metodologiyadan foydalaning:\n\n1. Dastur g'oyasini baholash mezonlari:\n   - Innovatsionlik darajasi (1-10 ball)\n   - Foydalanish qulayligi (1-10 ball)\n   - Bozor ehtiyojlariga mosligi (1-10 ball)\n   - Texnik amalga oshirish imkoniyatlari (1-10 ball)\n   - Iqtisodiy samaradorlik (1-10 ball)\n\n2. Tahlil jarayoni:\n   - Funksional imkoniyatlar\n   - Raqobatbardoshlik\n   - Xavfsizlik\n\n3. Xulosa:\n   - Ustunliklar va kamchiliklar\n   - Rivojlanish istiqbollari\n\nBaholash uchun g'oya:\n"
       }
     }
+  },
+  "teacherPage": {
+    "title": "Agent O'qituvchi",
+    "description": "Prompt yozishni interaktiv dars orqali o'rganing.",
+    "inputPlaceholder": "Promptingizni yozing yoki savol bering...",
+    "welcome": "Salom! Men sizning shaxsiy prompt o'qituvchingizman. Promptlaringizni tahlil qilib, ularni qanday yaxshilashni o'rgataman. Qani, boshlaymiz!",
+    "send": "Yuborish"
   },
   "settingsPage": {
     "title": "Sozlamalar",

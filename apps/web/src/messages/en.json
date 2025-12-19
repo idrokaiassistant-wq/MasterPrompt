@@ -10,6 +10,7 @@
     "settings": "Settings",
     "history": "History",
     "templates": "Templates",
+    "teacher": "Teacher",
     "loading": "Loading...",
     "error": "An error occurred"
   },
@@ -148,8 +149,20 @@
         "title": "Explain",
         "description": "Explain a complex topic",
         "prompt": "Explain the following topic in a simple and clear way:"
+      },
+      "idea_eval": {
+        "title": "Evaluate Idea",
+        "description": "Evaluate startup idea on a 10-point scale",
+        "prompt": "Use the following methodology to evaluate and analyze the program idea on a 10-point system:\n\n1. Evaluation Criteria:\n   - Innovation Level (1-10)\n   - Usability (1-10)\n   - Market Fit (1-10)\n   - Technical Feasibility (1-10)\n   - Economic Efficiency (1-10)\n\n2. Analysis Process:\n   - Functional Capabilities\n   - Competitiveness\n   - Security\n\n3. Conclusion:\n   - Pros and Cons\n   - Development Prospects\n\nIdea to evaluate:\n"
       }
     }
+  },
+  "teacherPage": {
+    "title": "Agent Teacher",
+    "description": "Learn prompt engineering through interactive lessons.",
+    "inputPlaceholder": "Enter your prompt or ask a question...",
+    "welcome": "Hello! I am your personal prompt teacher. I will analyze your prompts and teach you how to improve them. Let's start!",
+    "send": "Send"
   },
   "settingsPage": {
     "title": "Settings",

@@ -3,11 +3,12 @@
 import Link from 'next/link';
 import { usePathname, useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import { Sparkles, FileText, History, Settings } from 'lucide-react';
+import { Sparkles, FileText, History, Settings, GraduationCap } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { href: '/', icon: Sparkles, key: 'generate' },
+  { href: '/teacher', icon: GraduationCap, key: 'teacher' },
   { href: '/templates', icon: FileText, key: 'templates' },
   { href: '/history', icon: History, key: 'history' },
   { href: '/settings', icon: Settings, key: 'settings' },
@@ -46,5 +47,3 @@ export function BottomNav() {
     </nav>
   );
 }
-
-

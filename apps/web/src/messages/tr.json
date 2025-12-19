@@ -10,6 +10,7 @@
     "settings": "Ayarlar",
     "history": "Geçmiş",
     "templates": "Şablonlar",
+    "teacher": "Öğretmen",
     "loading": "Yükleniyor...",
     "error": "Bir hata oluştu"
   },
@@ -148,8 +149,20 @@
         "title": "Açıkla",
         "description": "Karmaşık bir konuyu açıkla",
         "prompt": "Aşağıdaki konuyu basit ve anlaşılır şekilde açıkla:"
+      },
+      "idea_eval": {
+        "title": "Fikir Değerlendirme",
+        "description": "Startup fikrini 10 puanlık sistemde değerlendir",
+        "prompt": "Program fikrini 10 puanlık bir sistemde değerlendirmek ve analiz etmek için aşağıdaki metodolojiyi kullanın:\n\n1. Değerlendirme Kriterleri:\n   - İnovasyon Seviyesi (1-10)\n   - Kullanılabilirlik (1-10)\n   - Pazar Uyumu (1-10)\n   - Teknik Uygulanabilirlik (1-10)\n   - Ekonomik Verimlilik (1-10)\n\n2. Analiz Süreci:\n   - Fonksiyonel Yetenekler\n   - Rekabet Edebilirlik\n   - Güvenlik\n\n3. Sonuç:\n   - Artılar ve Eksiler\n   - Gelişim Beklentileri\n\nDeğerlendirilecek fikir:\n"
       }
     }
+  },
+  "teacherPage": {
+    "title": "Ajan Öğretmen",
+    "description": "İnteraktif derslerle prompt mühendisliğini öğrenin.",
+    "inputPlaceholder": "Prompt'unuzu girin veya soru sorun...",
+    "welcome": "Merhaba! Ben kişisel prompt öğretmeninizim. Prompt'larınızı analiz edip nasıl geliştireceğinizi öğreteceğim. Hadi başlayalım!",
+    "send": "Gönder"
   },
   "settingsPage": {
     "title": "Ayarlar",

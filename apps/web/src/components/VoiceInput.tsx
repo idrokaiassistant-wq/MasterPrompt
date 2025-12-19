@@ -57,7 +57,7 @@ export function VoiceInput({ onListeningChange }: { onListeningChange?: (isListe
         recognitionRef.current.stop();
       }
     };
-  }, [t, setInput, language, onListeningChange]);
+  }, [t, setStoreInput, language, onListeningChange, onInput]);
 
   const handleToggleListening = () => {
     if (!isSupported) {
