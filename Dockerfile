@@ -57,6 +57,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
 
+# Create logs directory and set permissions
+RUN mkdir -p /app/logs && chown nextjs:nodejs /app/logs
+
 # Use non-root user
 USER nextjs
 

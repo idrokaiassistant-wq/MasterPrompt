@@ -8,7 +8,7 @@
     "build": "turbo run build",
     "start": "npm run start:prod",
     "start:local": "turbo run start",
-    "start:prod": "concurrently \"node scripts/monitor.js start\" \"node apps/web/server.js\" \"node apps/api-gateway/dist/index.js\" \"node apps/telegram-service/dist/bot.js\"",
+    "start:prod": "concurrently \"node scripts/monitor.js start\" \"node apps/web/server.js\" \"PORT=4000 node apps/api-gateway/dist/index.js\" \"PORT=3003 node apps/telegram-service/dist/bot.js\"",
     "start:telegram": "node apps/telegram-service/dist/bot.js",
     "test": "turbo run test",
     "lint": "turbo run lint",
